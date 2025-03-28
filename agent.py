@@ -71,7 +71,33 @@ workflow.add_edge("summarization", END)
 # Compile the graph
 app = workflow.compile()
 
+
 #ACTION
+sample_text1 = """
+A comprehensive guide to implementing secure authentication mechanisms in modern web applications. This document outlines best practices for password hashing, two-factor authentication, and protection against common security vulnerabilities such as SQL injection and cross-site scripting (XSS)."""
+
+# News Article Sample
+sample_text2 = """
+Artificial intelligence is evolving rapidly, but are we prioritizing ethics enough? As AI systems become more integrated into our daily lives, the risks of bias, misinformation, and misuse grow. Companies must take responsibility for ensuring fairness and transparency in AI models. Governments, too, should enact stricter regulations to prevent potential harm.
+
+If we fail to act now, we risk creating systems that reinforce discrimination rather than eliminate it. It’s time for a global conversation about responsible AI development before it’s too late
+# Personal Narrative Sample """
+
+sample_text3 = """
+The warm aroma of freshly baked bread, the rhythmic chopping of vegetables, and the soft humming of old folk songs – these are the sensory memories that transport me back to my grandmother's kitchen. Her culinary wisdom was more than just recipes; it was a form of love passed down through generations."""
+
+# Test each sample
+for sample_text in [sample_text1, sample_text2, sample_text3]:
+    state_input = {"text": sample_text}
+    result = app.invoke(state_input)
+    
+    print("Text Sample:", sample_text[:100] + "...")
+    print("Classification:", result["classification"])
+    print("Entities:", result["entities"])
+    print("Summary:", result["summary"])
+    print("\n---\n")
+
+'''
 '''
 sample_text = """
 OpenAI has announced the GPT-4 model, which is a large multimodal model that exhibits human-level performance on various professional benchmarks. It is developed to improve the alignment and safety of AI systems.
@@ -90,4 +116,4 @@ result = app.invoke(state_input)
 print("Classification:", result["classification"])
 print("\nEntities:", result["entities"])
 print("\nSummary:", result["summary"])
-
+'''
