@@ -97,23 +97,3 @@ for sample_text in [sample_text1, sample_text2, sample_text3]:
     print("Summary:", result["summary"])
     print("\n---\n")
 
-'''
-'''
-sample_text = """
-OpenAI has announced the GPT-4 model, which is a large multimodal model that exhibits human-level performance on various professional benchmarks. It is developed to improve the alignment and safety of AI systems.
-additionally, the model is designed to be more efficient and scalable than its predecessor, GPT-3. The GPT-4 model is expected to be released in the coming months and will be available to the public for research and development purposes.
-"""
-
-sample_text= """
-The warm aroma of freshly baked bread, the rhythmic chopping of vegetables, and the soft humming of old folk songs – these are the sensory memories that transport me back to my grandmother's kitchen. Her culinary wisdom was more than just recipes; it was a form of love passed down through generations."""
-'''
-sample_text = """
-A comprehensive guide to implementing secure authentication mechanisms in modern web applications. This document outlines best practices for password hashing, two-factor authentication, and protection against common security vulnerabilities such as SQL injection and cross-site scripting (XSS)."""
-
-state_input = {"text": sample_text}
-result = app.invoke(state_input)
-
-print("Classification:", result["classification"])
-print("\nEntities:", result["entities"])
-print("\nSummary:", result["summary"])
-'''
